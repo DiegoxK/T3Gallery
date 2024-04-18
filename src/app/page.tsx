@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <main>
       <div className="flex flex-wrap gap-8">
-        {mockUrls.map((url) => (
-          <img src={url} alt="mock" className="w-48" />
+        {mockUrls.map((url, index) => (
+          <img key={index} src={url} alt="mock" className="w-48" />
         ))}
       </div>
     </main>
