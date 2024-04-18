@@ -6,6 +6,7 @@ import { cn } from "~/lib/utils";
 
 const fontVibur = Vibur({
   weight: "400",
+  subsets: ["latin"],
 });
 
 const fontSans = FontSans({
