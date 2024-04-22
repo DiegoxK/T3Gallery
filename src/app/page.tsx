@@ -1,22 +1,21 @@
+import { desc } from "drizzle-orm";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
-const mockUrls = [
-  "https://utfs.io/f/02c6d10c-6f88-4d91-b490-48d1d6ed16f7-jk7jec.webp",
-  "https://utfs.io/f/003eafa7-8e9c-4e65-a6d9-8996afb70091-4jltdg.webp",
-];
-
 export default async function HomePage() {
-  const posts = await db.query.posts.findMany();
-
-  console.log(posts);
+  const images = await db.query.images.findMany({
+    orderBy: (model) => desc(model.id),
+  });
 
   return (
     <main>
       <div className="flex flex-wrap gap-8">
-        {mockUrls.map((url, index) => (
-          <img key={index} src={url} alt="mock" className="w-48" />
+        {[...images, ...images, ...images].map((image) => (
+          <div key={image.id}>
+            <img src={image.url} alt="mock" className="w-48" />
+            <p>{image.name}</p>
+          </div>
         ))}
       </div>
     </main>
