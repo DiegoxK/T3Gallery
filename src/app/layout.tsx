@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "~/styles/globals.css";
 
+import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "~/lib/utils";
@@ -24,7 +25,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider>
+      <ClerkProvider
+        appearance={{
+          baseTheme: dark,
+          variables: {
+            colorBackground: "hsl(201.4, 87.5%, 3.1%)",
+            // colorText: "hsl(201.4, 87.5%, 96.9%)",
+          },
+        }}
+      >
         <body
           className={cn(
             "dark min-h-screen bg-background font-sans antialiased",

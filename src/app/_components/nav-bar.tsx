@@ -1,3 +1,4 @@
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Vibur } from "next/font/google";
 import { cn } from "~/lib/utils";
 
@@ -19,9 +20,20 @@ export default function NavBar() {
         <span>T3 Gallery</span>
       </h1>
       <div className="flex gap-4">
-        <a className="link m-5" href="#">
-          Sign up
-        </a>
+        <SignedOut>
+          <SignInButton>
+            <div className="link m-5 cursor-pointer">Sign up</div>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "h-10 w-10",
+              },
+            }}
+          />
+        </SignedIn>
       </div>
     </nav>
   );
