@@ -10,10 +10,10 @@ export default async function HomePage() {
 
   return (
     <main>
-      <div className="flex flex-wrap gap-8">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {[...images, ...images, ...images].map((image) => (
           <div key={image.id}>
-            <img src={image.url} alt="mock" className="w-48" />
+            <img src={image.url} alt="Image" />
             <p>{image.name}</p>
           </div>
         ))}

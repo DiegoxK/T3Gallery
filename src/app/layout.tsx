@@ -30,7 +30,6 @@ export default function RootLayout({
           baseTheme: dark,
           variables: {
             colorBackground: "hsl(201.4, 87.5%, 3.1%)",
-            // colorText: "hsl(201.4, 87.5%, 96.9%)",
           },
         }}
       >
