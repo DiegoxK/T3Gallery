@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  outline: 1px solid rgb(129, 82, 161);
+} */
+
+:root {
+  --neon-color: 270.6, 88.5%, 55.7%;
+}
+
 @layer base {
   :root {
     --background: hsl(0 0% 100%);
-    --foreground: hsl(222.2 84% 4.9%);
+    --foreground: hsl(223, 90%, 11%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(222.2 84% 4.9%);
     --popover: hsl(0 0% 100%);
@@ -23,11 +31,11 @@
     --border: hsl(214.3 31.8% 91.4%);
     --input: hsl(214.3 31.8% 91.4%);
     --ring: hsl(221.2 83.2% 53.3%);
-    --radius: hsl(0rem);
+    --radius: 0rem;
   }
 
   .dark {
-    --background: hsl(201.4, 87.5%, 3.1%);
+    --background: hsl(240, 100%, 0.4%);
     --foreground: hsl(210 40% 98%);
     --card: hsl(222.2 84% 4.9%);
     --card-foreground: hsl(210 40% 98%);
@@ -70,39 +78,35 @@
     font-size: 2.5rem;
     text-align: center;
     line-height: 1;
-    color: #c6e2ff;
+    color: white;
     animation: neon 0.08s ease-in-out infinite alternate;
   }
 }
 
 /*-- Animation Keyframes --*/
-
 @keyframes neon {
   from {
     text-shadow:
-      0 0 6px rgba(202, 228, 225, 0.92),
-      0 0 30px rgba(202, 228, 225, 0.34),
-      0 0 12px rgba(30, 132, 242, 0.52),
-      0 0 21px rgba(30, 132, 242, 0.92),
-      0 0 34px rgba(30, 132, 242, 0.78),
-      0 0 54px rgba(30, 132, 242, 0.92);
+      0 0 6px hsl(var(--neon-color), 92%),
+      0 0 30px hsl(var(--neon-color), 34%),
+      0 0 12px hsl(var(--neon-color), 52%),
+      0 0 21px hsl(var(--neon-color), 92%),
+      0 0 34px hsl(var(--neon-color), 78%),
+      0 0 54px hsl(var(--neon-color), 92%);
   }
   to {
     text-shadow:
-      0 0 6px rgba(202, 228, 225, 0.98),
-      0 0 30px rgba(202, 228, 225, 0.42),
-      0 0 12px rgba(30, 132, 242, 0.58),
-      0 0 22px rgba(30, 132, 242, 0.84),
-      0 0 38px rgba(30, 132, 242, 0.88),
-      0 0 60px rgba(30, 132, 242, 1);
+      0 0 6px hsl(var(--neon-color), 98%),
+      0 0 30px hsl(var(--neon-color), 42%),
+      0 0 12px hsl(var(--neon-color), 58%),
+      0 0 22px hsl(var(--neon-color), 84%),
+      0 0 38px hsl(var(--neon-color), 88%),
+      0 0 60px hsl(var(--neon-color), 92%);
   }
 }
 
 /* Link */
 .link {
-  /* position: absolute;
-  bottom: 10px;
-  right: 10px; */
   font-size: 1.2rem;
   color: #828282;
   text-decoration: none;
@@ -111,11 +115,11 @@
   &:hover {
     color: #c6e2ff;
     text-shadow:
-      0 0 2px rgba(202, 228, 225, 0.92),
-      0 0 10px rgba(202, 228, 225, 0.34),
-      0 0 4px rgba(30, 132, 242, 0.52),
-      0 0 7px rgba(30, 132, 242, 0.92),
-      0 0 11px rgba(30, 132, 242, 0.78),
-      0 0 16px rgba(30, 132, 242, 0.92);
+      0 0 2px hsl(var(--neon-color), 92%),
+      0 0 10px hsl(var(--neon-color), 34%),
+      0 0 4px hsl(var(--neon-color), 52%),
+      0 0 7px hsl(var(--neon-color), 92%),
+      0 0 11px hsl(var(--neon-color), 78%),
+      0 0 16px hsl(var(--neon-color), 92%);
   }
 }

@@ -5,7 +5,7 @@ import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "~/lib/utils";
-import NavBar from "./_components/nav-bar";
+import NavBar from "./_components/navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,12 +35,12 @@ export default function RootLayout({
       >
         <body
           className={cn(
-            "dark min-h-screen bg-background font-sans antialiased",
+            "dark flex min-h-screen flex-col bg-background font-sans antialiased",
             fontSans.variable,
           )}
         >
           <NavBar />
-          <div className="container my-2">{children}</div>
+          <main className="container my-2 flex grow flex-col">{children}</main>
         </body>
       </ClerkProvider>
     </html>
