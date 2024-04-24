@@ -2,12 +2,15 @@ import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
 
 import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "~/lib/utils";
 import NavBar from "./_components/navbar";
+import { ourFileRouter } from "./api/uploadthing/core";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,6 +38,7 @@ export default function RootLayout({
           },
         }}
       >
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <body
           className={cn(
             "flex min-h-screen flex-col bg-background font-sans antialiased",
