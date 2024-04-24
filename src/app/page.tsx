@@ -13,7 +13,7 @@ async function Images() {
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
       {images.map((image) => (
         <div key={image.id}>
-          <img src={image.url} alt="Image" />
+          <img className="frame" src={image.url} alt="Image" />
           <p>{image.name}</p>
         </div>
       ))}
