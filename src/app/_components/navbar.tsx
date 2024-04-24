@@ -1,5 +1,8 @@
+"use client";
+
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Vibur } from "next/font/google";
+import { useRouter } from "next/navigation";
 import { cn } from "~/lib/utils";
 import { UploadButton } from "~/utils/uploadthing";
 
@@ -9,6 +12,8 @@ const fontVibur = Vibur({
 });
 
 export default function Navbar() {
+  const router = useRouter();
+
   return (
     <nav className="flex items-center justify-between p-6 px-12">
       <h1
@@ -27,7 +32,12 @@ export default function Navbar() {
           </SignInButton>
         </SignedOut>
         <SignedIn>
-          <UploadButton endpoint="imageUploader" />
+          <UploadButton
+            endpoint="imageUploader"
+            onClientUploadComplete={() => {
+              router.refresh();
+            }}
+          />
           <UserButton
             appearance={{
               elements: {
