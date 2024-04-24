@@ -1,5 +1,7 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import "~/styles/globals.css";
+import "@uploadthing/react/styles.css";
+
+import { ClerkProvider } from "@clerk/nextjs";
 
 import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
@@ -29,7 +31,7 @@ export default function RootLayout({
         appearance={{
           baseTheme: dark,
           variables: {
-            colorBackground: "hsl(201.4, 87.5%, 3.1%)",
+            colorBackground: "hsl(260, 43%, 2%)",
           },
         }}
       >

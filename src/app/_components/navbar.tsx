@@ -1,6 +1,7 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Vibur } from "next/font/google";
 import { cn } from "~/lib/utils";
+import { UploadButton } from "~/utils/uploadthing";
 
 const fontVibur = Vibur({
   weight: "400",
@@ -26,6 +27,7 @@ export default function Navbar() {
           </SignInButton>
         </SignedOut>
         <SignedIn>
+          <UploadButton endpoint="imageUploader" />
           <UserButton
             appearance={{
               elements: {
