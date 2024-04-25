@@ -46,7 +46,7 @@ export default function RootLayout({
           )}
         >
           <NavBar />
-          <main className="container my-2 flex grow flex-col">{children}</main>
+          <main className="container my-8 flex grow flex-col">{children}</main>
         </body>
       </ClerkProvider>
     </html>
