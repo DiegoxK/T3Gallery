@@ -41,6 +41,7 @@ export default function Navbar() {
           <UserButton
             appearance={{
               elements: {
+                rootBox: "h-10 w-10",
                 avatarBox: "h-10 w-10",
               },
             }}
