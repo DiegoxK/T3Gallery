@@ -1,4 +1,5 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Image from "next/image";
 import { getMyImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
@@ -14,12 +15,28 @@ async function Images() {
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {images.map((image) => (
-            <div className="frame text-center" key={image.id}>
-              <img src={image.url} alt="Image" />
-              <p className="my-2">{image.name.slice(0, 28) + "..."}</p>
-            </div>
-          ))}
+          {images.map((image) => {
+            const imageName = image.name;
+            const slicedName = imageName.slice(0, 20);
+
+            return (
+              <div className="frame text-center" key={image.id}>
+                <div className="relative aspect-square object-cover">
+                  <Image
+                    src={image.url}
+                    alt="Image"
+                    fill
+                    className="aspect-square object-cover"
+                  />
+                </div>
+                <p className="my-2">
+                  {imageName.length === slicedName.length
+                    ? imageName
+                    : slicedName + "..."}
+                </p>
+              </div>
+            );
+          })}
         </div>
       )}
     </>
