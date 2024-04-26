@@ -9,7 +9,7 @@ import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "~/lib/utils";
-import NavBar from "./_components/navbar";
+import NavBar from "../components/navbar";
 import { ourFileRouter } from "./api/uploadthing/core";
 import React from "react";
 
