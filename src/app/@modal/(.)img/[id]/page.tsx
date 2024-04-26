@@ -9,9 +9,17 @@ export default function ImageModal({
 }) {
   return (
     <ImageDialog>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <MyImage id={imageId} />
       </Suspense>
     </ImageDialog>
   );
 }
+
+const Loading = () => {
+  return (
+    <div className="frame flex aspect-square items-center justify-center">
+      <span className="loader" />
+    </div>
+  );
+};

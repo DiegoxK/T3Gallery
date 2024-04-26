@@ -25,7 +25,7 @@
     --muted: hsl(219, 32%, 9%) --muted-foreground: hsl(215 20.2% 65.1%);
     --accent: hsl(254, 48%, 25%);
     --accent-foreground: hsl(210 40% 98%);
-    --destructive: hsl(0 62.8% 30.6%);
+    --destructive: hsl(348, 77%, 52%);
     --destructive-foreground: hsl(210 40% 98%);
     --border: hsl(254, 48%, 25%);
     --input: hsl(254, 48%, 25%);
@@ -122,7 +122,7 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -136,7 +136,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: #ff3d00;
+  background: hsl(var(--neon-color));
   width: 6px;
   height: 6px;
   transform: translate(150%, 150%);
