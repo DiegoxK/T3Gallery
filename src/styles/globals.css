@@ -102,6 +102,18 @@
   }
 }
 
+/* Link */
+.neon {
+  color: #c6e2ff;
+  text-shadow:
+    0 0 2px hsl(var(--neon-color), 92%),
+    0 0 10px hsl(var(--neon-color), 34%),
+    0 0 4px hsl(var(--neon-color), 52%),
+    0 0 7px hsl(var(--neon-color), 92%),
+    0 0 11px hsl(var(--neon-color), 78%),
+    0 0 16px hsl(var(--neon-color), 92%);
+}
+
 /* Frames */
 
 .frame {

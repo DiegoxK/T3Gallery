@@ -19,21 +19,11 @@ export async function getMyImages() {
 }
 
 export async function getImage(id: number) {
-  const user = auth();
-
-  if (!user.userId) {
-    notFound();
-  }
-
   const image = await db.query.images.findFirst({
     where: (model, { eq }) => eq(model.id, id),
   });
 
   if (!image) {
-    notFound();
-  }
-
-  if (image.userId !== user.userId) {
     notFound();
   }
 
