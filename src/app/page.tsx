@@ -18,25 +18,25 @@ async function Images() {
         <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {images.map((image) => {
             const imageName = image.name;
-            const slicedName = imageName.slice(0, 20);
+            const slicedName = imageName.slice(0, 15);
 
             return (
               <div className="frame text-center" key={image.id}>
-                <div className="relative aspect-square object-cover">
-                  <Link href={`/img/${image.id}`}>
+                <Link className="link" href={`/img/${image.id}`}>
+                  <div className="relative aspect-square object-cover">
                     <Image
                       src={image.url}
                       alt="Image"
                       fill
                       className="aspect-square object-cover"
                     />
-                  </Link>
-                </div>
-                <p className="my-2">
-                  {imageName.length === slicedName.length
-                    ? imageName
-                    : slicedName + "..."}
-                </p>
+                  </div>
+                  <p className="mt-2 border pb-1">
+                    {imageName.length === slicedName.length
+                      ? imageName
+                      : slicedName + "..."}
+                  </p>
+                </Link>
               </div>
             );
           })}

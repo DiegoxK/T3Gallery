@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className="flex gap-4">
         <SignedOut>
           <SignInButton>
-            <div className="link m-5 cursor-pointer">Sign up</div>
+            <div className="link m-5 cursor-pointer text-lg">Sign up</div>
           </SignInButton>
         </SignedOut>
         <SignedIn>

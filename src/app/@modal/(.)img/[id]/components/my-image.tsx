@@ -1,4 +1,5 @@
 "use server";
+import Image from "next/image";
 import { getImage } from "~/server/queries";
 
 export default async function MyImage({ id }: { id: string }) {
@@ -8,5 +9,16 @@ export default async function MyImage({ id }: { id: string }) {
 
   const image = await getImage(idAsNumber);
 
-  return <img src={image.url} alt="Image" />;
+  return (
+    <div className="frame text-center" key={image.id}>
+      <div className="relative aspect-square object-cover">
+        <Image
+          src={image.url}
+          alt="Image"
+          fill
+          className="aspect-square object-cover"
+        />
+      </div>
+    </div>
+  );
 }
