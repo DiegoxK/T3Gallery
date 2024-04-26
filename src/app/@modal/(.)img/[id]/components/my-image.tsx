@@ -8,11 +8,14 @@ import {
   DialogHeader,
 } from "~/components/ui/dialog";
 import { Button } from "~/components/ui/button";
+import { notFound } from "next/navigation";
 
 export default async function MyImage({ id }: { id: string }) {
   const idAsNumber = Number(id);
 
-  if (isNaN(idAsNumber)) throw new Error("Invalid image ID");
+  if (isNaN(idAsNumber)) {
+    notFound();
+  }
 
   const image = await getImage(idAsNumber);
 
