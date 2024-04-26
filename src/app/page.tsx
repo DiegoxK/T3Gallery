@@ -14,7 +14,7 @@ async function Images() {
           <span>Click The Upload Button To Start Uploading!</span>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {images.map((image) => {
             const imageName = image.name;
             const slicedName = imageName.slice(0, 20);
