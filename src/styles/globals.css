@@ -102,7 +102,7 @@
   }
 }
 
-/* Link */
+/* Sigle text */
 .neon {
   color: #c6e2ff;
   text-shadow:
@@ -114,8 +114,11 @@
     0 0 16px hsl(var(--neon-color), 92%);
 }
 
-/* Frames */
+.neon-svg {
+  filter: drop-shadow(0 0 2px hsl(var(--neon-color), 92%));
+}
 
+/* Frames */
 .frame {
   --s: 10px; /* control the size */
   padding: var(--s);

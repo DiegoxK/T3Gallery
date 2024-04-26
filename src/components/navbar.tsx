@@ -3,9 +3,9 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Vibur } from "next/font/google";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+
 import { cn } from "~/lib/utils";
-import { UploadButton } from "~/utils/uploadthing";
+import UploadButton from "./ui/upload-button";
 
 const fontVibur = Vibur({
   weight: "400",
@@ -13,8 +13,6 @@ const fontVibur = Vibur({
 });
 
 export default function Navbar() {
-  const router = useRouter();
-
   return (
     <nav className="flex items-center justify-between p-6 px-12">
       <h1
@@ -35,12 +33,13 @@ export default function Navbar() {
           </SignInButton>
         </SignedOut>
         <SignedIn>
-          <UploadButton
+          {/* <UploadButton
             endpoint="imageUploader"
             onClientUploadComplete={() => {
               router.refresh();
             }}
-          />
+          /> */}
+          <UploadButton />
           <UserButton
             appearance={{
               elements: {

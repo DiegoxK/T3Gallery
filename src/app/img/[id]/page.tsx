@@ -15,7 +15,6 @@ export default async function ImagePage({
   }
 
   const image = await getImage(idAsNumber);
-
   const uploadInfo = await clerkClient.users.getUser(image.userId);
 
   return (
