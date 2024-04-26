@@ -11,6 +11,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "~/lib/utils";
 import NavBar from "./_components/navbar";
 import { ourFileRouter } from "./api/uploadthing/core";
+import React from "react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,8 +26,10 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -49,6 +52,8 @@ export default function RootLayout({
           <main className="container mb-[8%] flex grow flex-col">
             {children}
           </main>
+          {modal}
+          <div id="modal-root" />
         </body>
       </ClerkProvider>
     </html>

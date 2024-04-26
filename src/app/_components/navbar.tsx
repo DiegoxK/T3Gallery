@@ -2,6 +2,7 @@
 
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Vibur } from "next/font/google";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { cn } from "~/lib/utils";
 import { UploadButton } from "~/utils/uploadthing";
@@ -23,7 +24,9 @@ export default function Navbar() {
         )}
       >
         {/* <span>T3</span> */}
-        <span>T3 Gallery</span>
+        <Link className="text-center" href="/">
+          <span>T3 Gallery</span>
+        </Link>
       </h1>
       <div className="flex gap-4">
         <SignedOut>
