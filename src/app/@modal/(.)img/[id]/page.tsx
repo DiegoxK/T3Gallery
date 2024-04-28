@@ -19,7 +19,13 @@ export default function ImageModal({
 const Loading = () => {
   return (
     <div className="frame flex aspect-square items-center justify-center">
-      <span className="loader" />
+      <span
+        style={{
+          height: "38px",
+          width: "38px",
+        }}
+        className="loader"
+      />
     </div>
   );
 };
