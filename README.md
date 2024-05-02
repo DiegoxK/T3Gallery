@@ -12,7 +12,8 @@
 - [x] "taint" (server-only)
 - [x] Use Next/Image component
 - Error Management (w/ Sentry) **Unavailable ( Requires Subscription )**
-- [ ] Routing/image page (parallel route)
+- [x] Routing/image page (parallel route)
+- [ ] Update upload button to be less cringe
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
