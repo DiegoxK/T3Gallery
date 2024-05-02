@@ -8,10 +8,12 @@ import { extractRouterConfig } from "uploadthing/server";
 import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "~/lib/utils";
-import NavBar from "../components/navbar";
 import { ourFileRouter } from "./api/uploadthing/core";
-import React from "react";
+import { Toaster } from "~/components/ui/toaster";
+
+import { cn } from "~/lib/utils";
+
+import NavBar from "../components/navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,6 +55,7 @@ export default function RootLayout({
             {children}
           </main>
           {modal}
+          <Toaster />
           <div id="modal-root" />
         </body>
       </ClerkProvider>
