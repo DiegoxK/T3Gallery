@@ -9,11 +9,11 @@ import { dark } from "@clerk/themes";
 import { Inter as FontSans } from "next/font/google";
 
 import { ourFileRouter } from "./api/uploadthing/core";
-import { Toaster } from "~/components/ui/toaster";
 
 import { cn } from "~/lib/utils";
 
 import NavBar from "../components/navbar";
+import { Toaster } from "../components/ui/sonner";
 
 const fontSans = FontSans({
   subsets: ["latin"],
