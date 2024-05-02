@@ -13,7 +13,7 @@
 - [x] Use Next/Image component
 - Error Management (w/ Sentry) **Unavailable ( Requires Subscription )**
 - [x] Routing/image page (parallel route)
-- [ ] Update upload button to be less cringe
+- [x] Update upload button to be less cringe
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
