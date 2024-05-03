@@ -14,7 +14,7 @@
 - Error Management (w/ Sentry) **Unavailable ( Requires Subscription )**
 - [x] Routing/image page (parallel route)
 - [x] Update upload button to be less cringe
-- [ ] Add toast notifications
+- [x] Add toast notifications
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
