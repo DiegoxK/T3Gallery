@@ -5,7 +5,6 @@ import { auth } from "@clerk/nextjs/server";
 import { notFound, redirect } from "next/navigation";
 import { images } from "./db/schema";
 import { and, eq } from "drizzle-orm";
-import { revalidatePath } from "next/cache";
 
 export async function getMyImages() {
   const user = auth();
