@@ -16,5 +16,4 @@
 - [x] Update upload button to be less cringe
 - [x] Add toast notifications
 - [ ] Delete button (w/ Server Actions)
-- [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)

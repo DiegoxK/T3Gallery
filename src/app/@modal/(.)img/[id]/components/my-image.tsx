@@ -1,6 +1,6 @@
 "use server";
 import Image from "next/image";
-import { getImage } from "~/server/queries";
+import { deleteImage, getImage } from "~/server/queries";
 
 import {
   DialogTitle,
@@ -37,9 +37,17 @@ export default async function MyImage({ id }: { id: string }) {
         </div>
       </div>
       <DialogFooter>
-        <Button className="w-full" variant="destructive">
-          Delete
-        </Button>
+        <form
+          className="w-full"
+          action={async () => {
+            "use server";
+            await deleteImage(idAsNumber);
+          }}
+        >
+          <Button type="submit" className="w-full" variant="destructive">
+            Delete
+          </Button>
+        </form>
       </DialogFooter>
     </>
   );
