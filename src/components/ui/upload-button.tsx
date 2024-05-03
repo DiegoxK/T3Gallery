@@ -47,6 +47,11 @@ export default function UploadButton() {
 
         router.refresh();
       },
+      onUploadError: (err) => {
+        console.error(err);
+        toast.dismiss("upload-begin");
+        toast("Upload failed");
+      },
     },
   );
 
