@@ -92,7 +92,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repo**
     ```sh
-    git clone https://github.com/DiegoxK/t3gallery.git
+    git clone https://github.com/DiegoxK/T3Gallery.git
     ```
 2.  **Install NPM packages**
     ```sh
