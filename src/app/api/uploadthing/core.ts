@@ -16,8 +16,8 @@ export const ourFileRouter = {
 
       const fullUserData = await clerkClient.users.getUser(user.userId);
 
-      if (fullUserData?.privateMetadata?.["can-upload"] !== "true") {
-        throw new UploadThingError("User does not have to upload permissions");
+      if (fullUserData?.privateMetadata?.["can-upload"] !== true) {
+        throw new UploadThingError("User does not have upload permissions");
       }
 
       const { success } = await ratelimit.limit(user.userId);
